@@ -851,35 +851,6 @@ client.on("guildMemberAdd", member => {
 
 
 
-client.on('message',async message => {
-    const moment = require('moment');
-const ms = require('ms')
-    var prefix = '!' //بريفكس البوت
-  var time = moment().format('Do MMMM YYYY , hh:mm');
-  var room;
-  var title;
-  var duration;
-  var currentTime = new Date(),
-hours = currentTime.getHours() + 3 ,
-minutes = currentTime.getMinutes(),
-done = currentTime.getMinutes() + duration,
-seconds = currentTime.getSeconds();
-if (minutes < 10) {
-minutes = "0" + minutes;
-}
-var suffix = "AM";
-if (hours >= 12) {
-suffix = "PM";
-hours = hours - 12;
-}
-if (hours == 0) {
-hours = 12;
-}
-
-
-
-
-
 
 
 
