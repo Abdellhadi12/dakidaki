@@ -148,7 +148,7 @@ client.on('message', message => {
 
 
 client.on("message", msg => {
-  if(msg.content === '!' + "id") {
+  if(msg.content === '!' + "idd") {
       const embed = new Discord.RichEmbed();
   embed.addField("🔱| اسم الحساب :", `${msg.author.username}#${msg.author.discriminator}`, true)
           .addField("🆔| الاي دي :", `${msg.author.id}`, true)
@@ -838,10 +838,32 @@ client.on('message', async message => {
 
 
 
+client.on("guildMemberAdd", member => {
+  member.createDM().then(function (channel) {
+  return channel.send(`:rose:  ولكم نورت السيرفر:rose: 
+:crown: ${member}:crown:  
+انت العضو رقم ${member.guild.memberCount} `) 
+}).catch(console.error)
+})
 
 
 
-
+const moment = reqiure("moment");
+client.on("message", msg => {
+var prefix = "!"//البرفكس
+    if (msg.content.startsWtih(prefix + "id")) {
+let embed = new Discord.RichEmbed()
+     .setColor("RANDOM")
+     .setAuthor(msg.author.username, msg.author.avatarURL)
+     .setTitle('👥Your Information👥')
+     .addField("📜Name + Tag📜", msg.author.tag, true)
+     .setThumbnail(msg.author.avatarURL)
+     .addField('Your ID', msg.author.id, true)
+     .addField('📆Account Created At📆',${moment(msg.author.createdAt).format('D/M/YYYY h:mm a')} **\n** \${moment(msg.author.createdAt).fromNow()}``, true)
+     .setFooter(msg.guild.name, msg.guild.iconURL, true)
+     msg.channel.sendEmbed(embed);
+    }
+  });
 
 
 
