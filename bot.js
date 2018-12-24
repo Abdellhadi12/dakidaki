@@ -841,9 +841,9 @@ client.on('ready', () => {
   console.log('I am ready!');
 });
 client.on('message',async message => {//Toxic Code
-  if(message.author.bot || message.channel.type === '!bc') return;
+  if(message.author.bot || message.channel.type === '!bct') return;
   let args = message.content.split(' ');
-  if(args[0] === `!bc`) {//Toxic Code
+  if(args[0] === `!bct`) {//Toxic Code
     if(!message.member.hasPermission("MANAGE_GUILD")) return message.channel.send('- **أنت لا تملك الصلاحيات اللازمة لأستخدام هذا الأمر**');
     if(!args[1]) return message.channel.send('- **يجب عليك كتابة الرسالة بعد الأمر**');
  
