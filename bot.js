@@ -52,17 +52,6 @@ message.author.send(`
 
 
 
-client.on('ready', () => {
-   console.log(`----------------`);
-      console.log(`Desert Bot- Script By : i1Suhaib`);
-        console.log(`----------------`);
-      console.log(`ON ${client.guilds.size} Servers '     Script By : i1Suhaib ' `);
-    console.log(`----------------`);
-  console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`!help | By Abdellhadi`,"http://twitch.tv/S-F")
-client.user.setStatus("dnd")
-});
-
 
 
 
@@ -348,7 +337,7 @@ client.on("message", message => {
     
     let command = message.content.split(" ")[0];
     
-    if (command === "!اسكت") {
+    if (command === "اسكت") {
           if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply("** لا يوجد لديك برمشن 'Manage Roles' **").catch(console.error);
     let user = message.mentions.users.first();
     let modlog = client.channels.find('name', 'log');
@@ -384,7 +373,7 @@ client.on("message", message => {
     
     let command = message.content.split(" ")[0];
     
-    if (command === "!تكلم") {
+    if (command === "تكلم") {
           if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply("** لا يوجد لديك برمشن 'Manage Roles' **").catch(console.error);
     let user = message.mentions.users.first();
     let modlog = client.channels.find('name', 'log');
@@ -477,7 +466,7 @@ client.on("guildMemberAdd", member => {
 setTimeout(function(){ 
   const channel = member.guild.channels.find('id', '489379054584201247');  
 if (!channel) return; 
-  channel.send(`**Welcome To [__Kings Shop__]:shopping_cart:** ❤️ , ${member}`) 
+  channel.send(`**Welcome To [__Sty_Light__]** ❤️ , ${member}`) 
 }, 5000);  
 }});  
 
@@ -524,7 +513,7 @@ client.on('message', message => {
        message.delete() 
        }
     }
-          if (message.content.startsWith("ban ")) {
+          if (message.content.startsWith("ban")) {
              if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply();
              var member= message.mentions.members.first();
              member.ban().then((member) => {
@@ -553,20 +542,6 @@ client.on('message',function(message) {
 
 
 
-const moment = require("moment")
-client.on("guildMemberAdd", m => {
-    if (datediff(parseDate(moment(m.user.createdTimestamp).format('l')), parseDate(moment().format('l'))) < 8) {
-        m.ban();
-    };
-    function parseDate(str) {
-        var mdy = str.split('/');
-        return new Date(mdy[2], mdy[0]-1, mdy[1]);
-    };
-   
-    function datediff(first, second) {
-        return Math.round((second-first)/(1000*60*60*24));
-    };
-});
 
 
 
@@ -676,7 +651,7 @@ const cuttweet = [
 ]
 
 client.on('message', message => {
-  if (message.content.startsWith("!كت تويت")) {
+  if (message.content.startsWith("Cut")) {
                if(!message.channel.guild) return message.reply('** This command only for servers**');
  var embed = new Discord.RichEmbed()
  .setColor('RANDOM')
